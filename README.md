@@ -15,6 +15,9 @@ The project focuses on implementing game logic, state management, DOM interactio
 - High score persistence using Local Storage
 - Game over handling and restart mechanism
 - Responsive and simple user interface
+- Mobile support with tap-to-start interaction
+- CSS Grid based responsive layout
+- Adaptive sizing using clamp() for improved responsiveness
 
 ---
 
@@ -27,7 +30,7 @@ The project focuses on implementing game logic, state management, DOM interactio
 
 ## Game Flow
 
-1. Start the game using keyboard input  
+1. Start the game using keyboard input or tap interaction
 2. Observe the generated color pattern  
 3. Repeat the sequence through user interaction  
 4. Advance through increasing difficulty levels  
