@@ -1,20 +1,30 @@
 body{
     text-align: center;
+    margin:0;
+    padding:1rem;
 }
 
-.btn
-{
-    height:200px;
-    width:200px;
-    border-radius: 20%;
+
+  .btn{
+    width:clamp(100px,22vw,200px);
+    height:clamp(100px,22vw,200px);
+    border-radius:20%;
     border:10px solid black;
-    margin:2.2rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:0.2s;
 }
+
 
 .btn-container
 {
-    display:flex;
-    justify-content: center;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1rem;
+    justify-content:center;
+    width:fit-content;
+    margin:auto;
 }
 
 .green
@@ -41,3 +51,16 @@ body{
 {
     background-color: white;
 }
+
+h1{
+font-size:clamp(2rem,5vw,3rem);
+}
+
+h2{
+font-size:clamp(1rem,3vw,1.5rem);
+}
+
+h3{
+font-size:clamp(1rem,3vw,1.3rem);
+}
+

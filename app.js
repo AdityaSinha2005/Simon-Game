@@ -13,16 +13,17 @@ let level=0;
 
 let h2=document.querySelector("h2");
 
-document.addEventListener("keypress",function() 
+function startGame()
 {
-  if(started==false)
-  {
-    console.log("Game started");
-    started=true;
+   if(started === false)
+   {
+      started = true;
+      levelUp();
+   }
+}
 
-    levelUp();
-  }
-});
+document.addEventListener("keypress", startGame);
+document.addEventListener("click", startGame);
 
 function btnFlash(btn)
 {
@@ -56,19 +57,22 @@ function checkAns(idx)
         }
     }
     else{
-        h2.innerHTML=`Game Over! Your score was <b>${level}<b> <br>Press any key to start`;
+
+        let score = level;
+        h2.innerHTML=`Game Over! Your score was <b>${score}</b><br>Press any key or tap to start`;
+
         document.querySelector("body").style.backgroundColor="red";
-        setTimeout( function() {
-            document.querySelector("body").style.backgroundColor="white";
-        }, 150);
-        if(level > highScore){
-    highScore = level;
-    localStorage.setItem("highScore", highScore);
-    h3.innerText = `High Score: ${highScore}`;
-}
+
+        setTimeout(function() {document.querySelector("body").style.backgroundColor="white";},150);
+
+        if(score > highScore){
+            highScore = score;
+            localStorage.setItem("highScore",highScore);
+            h3.innerText=`High Score: ${highScore}`;
+     }
 
         reset();
-    }
+}
 }
 
 function btnPress()
